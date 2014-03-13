@@ -1,11 +1,10 @@
-Package: reg_combo_pack
+Package: RegComboPack
 Title: Regressions for combinations of covariates
 Description: Runs Regressions for all combinations of covariates
 Version: 0.1
-Authors@R: Emily Moore
+Author: Emily Moore
 Depends:
-	R (>= 3.0.2)
+    R (>= 3.0.2)
 License: GPL (>=2)
 Suggests:
-	devtools
-Collate:
+    devtools

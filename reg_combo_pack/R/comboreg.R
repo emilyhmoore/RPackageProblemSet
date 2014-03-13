@@ -12,19 +12,13 @@
 #' @note Needs work
 #' @examples
 #' 
-#' myX <- matrix(c(1,2,3,4), nrow=2)
-#' myY <- c(-2, 4.1) 
-#' comboreg(myX, myY)
+#' x1<-rnorm(5)
+#' x2<-rnorm(5,3,15)
+#' dep<-(x1+2*x2)+rnorm(5,4,100)
+#' covars<-cbind(x1,x2) 
+#' comboreg(x=covars, y=dep)
 #' @rdname comboreg
 #' @export
-
-#install.packages('HapEstXXR') ##Run code if you do not have this package
-#install.package('reshape2')
-#x1<-rnorm(5)
-#x2<-rnorm(5,3,15)
-#dep<-(x1+2*x2)+rnorm(5,4,100)
-
-#covars<-cbind(x1,x2)
 
 ######Runs regression, returning list of coefficients for each regression run
 comboreg<-function(x, y){

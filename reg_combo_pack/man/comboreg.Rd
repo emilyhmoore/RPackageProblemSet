@@ -22,9 +22,11 @@ Runs regression on all possible combos of covariates
 Needs work
 }
 \examples{
-myX <- matrix(c(1,2,3,4), nrow=2)
-myY <- c(-2, 4.1)
-comboreg(myX, myY)
+x1<-rnorm(5)
+x2<-rnorm(5,3,15)
+dep<-(x1+2*x2)+rnorm(5,4,100)
+covars<-cbind(x1,x2)
+comboreg(x=covars, y=dep)
 }
 \author{
 Emily Moore

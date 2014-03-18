@@ -21,7 +21,8 @@
 #' @export
 
 ######Runs regression, returning list of coefficients for each regression run
-comboreg<-function(x, y){
+setMethod(f="comboreg",
+          definition=function(x, y){
   library(reshape2)
   library(HapEstXXR)
   library(plyr)
@@ -46,11 +47,8 @@ fits<-unlist(fits)
  # names(thing[[i]])<-c("intercept", colnames(x)[1:(length(thing[[i]])-1)])
 #}
 
-return(list(coefs=thing, r.squared=fits))
+return(new("regcombo", combo.coef=thing, 
+           combo.fit=fits, x = head(x), y = head(y)))
 }
-
-
-#coefs<-(comboreg(x=covars, y=dep))
-#coefs
-
+)
 

@@ -2,7 +2,7 @@
 \alias{comboreg}
 \title{Reg Combo Function}
 \usage{
-comboreg(x, y)
+comboreg(x, y, ...)
 }
 \arguments{
   \item{x}{A numeric matrix of covariates}
@@ -22,9 +22,9 @@ Runs regression on all possible combos of covariates
 Needs work
 }
 \examples{
-x1<-rnorm(5)
-x2<-rnorm(5,3,15)
-dep<-(x1+2*x2)+rnorm(5,4,100)
+x1<-rnorm(500)
+x2<-rnorm(500,3,15)
+dep<-(x1+2*x2)+rnorm(500,4,100)
 covars<-cbind(x1,x2)
 comboreg(x=covars, y=dep)
 }

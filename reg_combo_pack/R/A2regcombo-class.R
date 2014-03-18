@@ -30,3 +30,39 @@ setClass(Class="regcombo",
          )
 )
 
+#' @export
+setMethod("initialize", "regcombo",
+          function(.Object, ...){
+            value=callNextMethod()
+            return(value)
+          }
+) 
+
+#' @export
+setMethod("print", "regcombo",
+          function(x){
+            summary(x@combo.fit)
+          }
+            )
+
+#' @export
+
+setMethod("show", "regcombo",
+          function(object){
+            cat("Regression Fits", "\n")
+            print(object@combo.fit)
+            cat("Regression Coefficients", "\n")
+            print(object@combo.coef)
+          }
+)
+
+#' @export
+
+setMethod(f="plot", signature="regcombo",
+          definition=function(x){
+            plot(x=(1:length(x@combo.fit)),y=x@combo.fit, 
+                 xlab="Regression Number" , ylab="R-Squared", 
+                 type="l", col="purple", ...)
+                 abline(h=x@avg.fit, col="red")
+          }
+          )

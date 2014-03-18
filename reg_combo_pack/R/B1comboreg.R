@@ -21,6 +21,11 @@
 #' @export
 
 ######Runs regression, returning list of coefficients for each regression run
+setGeneric(name="comboreg",
+           def=function(x, y, ...)
+           {standardGeneric("comboreg")}
+)
+
 setMethod(f="comboreg",
           definition=function(x, y){
   library(reshape2)
@@ -52,3 +57,9 @@ return(new("regcombo", combo.coef=thing,
 }
 )
 
+#mat<-cbind(rnorm(10, 5, 3), rnorm(10,4,4))
+#dep<-2*mat[,1]+3*mat[,2]+rnorm(10,15,3)
+#thing<-comboreg(x=mat, y=dep)
+#thing@combo.fit
+
+#plot(thing)

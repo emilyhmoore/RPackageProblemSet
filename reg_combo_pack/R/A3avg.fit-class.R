@@ -10,6 +10,7 @@
 #'
 #' @author Emily Moore: \email{emily.moore@@wustl.edu}
 #' @export
+
 setClass(Class="Avg.Fit",
          representation = representation(
            avg.fit="numeric"

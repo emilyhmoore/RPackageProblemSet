@@ -1,2 +1,7 @@
 export(comboreg)
+exportClasses(Avg.Fit)
 exportClasses(regcombo)
+exportMethods(initialize)
+exportMethods(plot)
+exportMethods(print)
+exportMethods(show)

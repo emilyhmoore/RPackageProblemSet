@@ -27,7 +27,6 @@ setGeneric(name="comboreg",
 
 setMethod(f="comboreg",
           definition=function(x, y){
-  library(reshape2)
   library(HapEstXXR)
   library(plyr)
 set<-powerset(1:ncol(x)) ##create a list of all possible combos of variables

@@ -8,6 +8,8 @@ current.code <- as.package("reg_combo_pack")
 load_all(current.code)
 document(current.code)
 
+check(current.code)
+
 install(pkg=current.code, local=TRUE)
 
 ##Example data

@@ -2,8 +2,8 @@
 \name{reg_combo_pack}
 \alias{reg_combo_pack}
 \alias{reg_combo_pack-package}
-\title{reg_combo_pack}
+\title{RegComboPack}
 \description{
-reg_combo_pack
+This package includes functions to run regressions of all possible covariate combinations. 
 }
 

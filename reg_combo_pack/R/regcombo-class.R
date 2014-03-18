@@ -14,6 +14,7 @@
 #' @author Emily Moore: \email{emily.moore@@wustl.edu}
 #' @export
 setClass(Class="regcombo",
+         contains="Avg.Fit",
          representation = representation(
            combo.coef = "list",
            combo.fit="numeric",
@@ -24,6 +25,8 @@ setClass(Class="regcombo",
            combo.coef=list(),
            combo.fit=numeric(),
            x = matrix(),
-           y = numeric()
+           y = numeric(),
+           avg.fit=numeric()
          )
 )
+

@@ -11,15 +11,12 @@ comboreg(x, y, ...)
   number of rows in x.}
 }
 \value{
-A list with the elements \item{coefs}{A list of
-coefficients from each regression} \item{x}{The first
-object input}
+A list with the elements \item{combo.coef}{A list of
+coefficients from each regression} \item{combo.fit}{Vector
+of R-squared Values}
 }
 \description{
 Runs regression on all possible combos of covariates
-}
-\note{
-Needs work
 }
 \examples{
 x1<-rnorm(500)

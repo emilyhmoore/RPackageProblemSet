@@ -6,10 +6,9 @@
 #' @param y A numeric vector of the same length as the number of rows in x.
 #'
 #' @return A list with the elements
-#'  \item{coefs}{A list of coefficients from each regression}
-#'  \item{x}{The first object input} 
+#'  \item{combo.coef}{A list of coefficients from each regression}
+#'  \item{combo.fit}{Vector of R-squared Values} 
 #' @author Emily Moore
-#' @note Needs work
 #' @examples
 #' 
 #' x1<-rnorm(500)
@@ -53,13 +52,7 @@ fits<-unlist(fits)
 #}
 
 return(new("regcombo", combo.coef=thing, 
-           combo.fit=fits, x = head(x), y = head(y), avg.fit=mean(fits)))
+           combo.fit=fits, x = x, y = y, avg.fit=mean(fits)))
 }
 )
 
-#mat<-cbind(rnorm(10, 5, 3), rnorm(10,4,4))
-#dep<-2*mat[,1]+3*mat[,2]+rnorm(10,15,3)
-#thing<-comboreg(x=mat, y=dep)
-#thing@combo.fit
-
-#plot(thing)

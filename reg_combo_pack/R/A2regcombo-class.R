@@ -60,9 +60,35 @@ setMethod("show", "regcombo",
 
 setMethod(f="plot", signature="regcombo",
           definition=function(x){
-            plot(x=(1:length(x@combo.fit)),y=x@combo.fit, 
+            plot.default(x=(1:length(x@combo.fit)),y=x@combo.fit, 
                  xlab="Regression Number" , ylab="R-Squared", 
-                 type="l", col="purple", ...)
+                 type="o", col="purple", main="R-Squared Over Models Run", pch="*")
                  abline(h=x@avg.fit, col="red")
           }
           )
+
+#' @export 
+setGeneric("getcombo.fit",
+           function(object="regcombo")  {
+             standardGeneric("getcombo.fit")
+           }
+)
+#' @export
+setMethod("getcombo.fit", "regcombo",
+          function(object){
+            return(object@combo.fit)
+          }
+)
+#' @export 
+setGeneric("setregcombo.y",
+           function(object="setregcombo.y", ...)  {
+             standardGeneric("setregcombo.y")
+           }
+)
+#' @export
+setMethod("setregcombo.y", "regcombo",
+          function(object, new.y){ ##will take comboreg output and rerun same with new y
+            comboreg(x=object@x, y=new.y)
+          }
+)
+
